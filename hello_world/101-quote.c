@@ -2,7 +2,7 @@
 #include <unistd.h>
 /**
 *main- the program writes a message to the std error
-*Return: always returns 0
+*Return: always returns 1
 */
 int main(void)
 {
