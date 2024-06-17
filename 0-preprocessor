@@ -1,0 +1,3 @@
+#!/bin/bash
+export CFILE
+gcc $CFILE -o c
