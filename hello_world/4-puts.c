@@ -1,7 +1,7 @@
 #include <stdio.h>
-/*
- *puts a hardcoded string into the standard output
- *then retruns with 0
+/**
+ * main- puts a hardcoded string into the standard output
+ * Return: Always returns 0
 */
 int main(void)
 {

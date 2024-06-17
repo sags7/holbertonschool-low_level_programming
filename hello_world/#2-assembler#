@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "$(echo $CFILE.o | cut -d'.' -f1).o"cut -d '.' -f1 ).s")
+p
