@@ -28,7 +28,10 @@ int main(void)
 					putchar('0' + c);
 					putchar('0' + d);
 					if (!(A == 98 && B == 99))
+					{
 						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
