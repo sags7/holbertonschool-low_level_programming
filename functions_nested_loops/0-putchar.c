@@ -1,11 +1,9 @@
-#include <stdio.h>
+#include "main.h"
 /**
 * main- program entry point
 *
 * Return: Successful execution always retruns 0
 */
-
-void _putchar(void);
 
 int main(void)
 {
