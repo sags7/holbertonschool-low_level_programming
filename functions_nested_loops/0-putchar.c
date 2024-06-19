@@ -5,8 +5,10 @@
 * Return: Successful execution always retruns 0
 */
 
+void _putchar(void);
+
 int main(void)
 {
-	printf("_putchar\n");
+	_putchar();
 	return (0);
 }
