@@ -1,14 +1,6 @@
 #include <stdio.h>
 
-void _putchar(void)
+void _putchar(char c)
 {
-	putchar('_');
-	putchar('p');
-	putchar('u');
-	putchar('t');
-	putchar('c');
-	putchar('h');
-	putchar('a');
-	putchar('r');
-	putchar('\n');
+	printf("%c", c);
 }
