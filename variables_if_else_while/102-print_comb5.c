@@ -8,9 +8,7 @@
 
 int main(void)
 {
-	int a;
-	int b;
-	int c;
+	int a, b, c, d, A, B;
 
 	for (a = 0; a < 10; a++)
 	{
@@ -18,16 +16,19 @@ int main(void)
 		{
 			for (c = 0; c < 10; c++)
 			{
-				if (c <= b || b <= a)
-					continue;
-				putchar('0' + a);
-				putchar('0' + b);
-				putchar('0' + c);
-
-				if (a != 7 && b != 8 && c != 9)
+				for (d = 0; d < 10; d++)
 				{
-					putchar(',');
+					A = (a * 10) + b;
+					B = (c * 10) + d;
+					if (A >= B)
+						continue;
+					putchar('0' + a);
+					putchar('0' + b);
 					putchar(' ');
+					putchar('0' + c);
+					putchar('0' + d);
+					if (!(A == 98 && B == 99))
+						putchar(',');
 				}
 			}
 		}
