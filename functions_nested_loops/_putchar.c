@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <unistd.h>
 
 void _putchar(char c)
 {
-	printf("%c", c);
+	write(1, &c, 1);
 }
