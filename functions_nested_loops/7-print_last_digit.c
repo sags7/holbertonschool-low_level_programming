@@ -14,12 +14,6 @@ int print_last_digit(int p)
 
 	if (x < 0)
 		x *= -1;
-
-/*	printf("x equals: %d\n", x);
-	printf("98 should read:  %d\n", 98 % 10);
-	printf("0 should read:  %d\n", 0 % 10);
-	printf("-1024 should read:  %d\n", -1024 % 10);
-*/
 	_putchar('0' + x);
 	return (x);
 }
