@@ -21,9 +21,10 @@ void times_table(void)
 			if ((r / 10) != 0)
 				_putchar('0' + (r / 10));
 			_putchar('0' + (r % 10));
-			if (!(a == 9 && b == 9))
+			if (b < 9)
 				_putchar(',');
 		}
-	_putchar('\n');
+		_putchar('$');
+		_putchar('\n');
 	}
 }
