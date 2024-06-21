@@ -12,12 +12,16 @@ int main(void)
 
 	printf("%lu, ", a);
 	printf("%lu, ", b);
-	for (i = 0; i < 47; i++)
+	for (i = 0; i < 48; i++)
 	{
 		r = a + b;
 		a = b;
 		b = r;
-		printf("%lu, ", r);
+		printf("%lu", r);
+		if (i < 47)
+			printf(", ");
+		else
+			printf("\n");
 	}
 	return (0);
 }
