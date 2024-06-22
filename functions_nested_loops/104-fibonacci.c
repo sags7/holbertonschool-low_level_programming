@@ -12,14 +12,16 @@ int main(void)
 
 	printf("%lu, ", a);
 	printf("%lu, ", b);
-	for (i = 0; i < 96; i++)
+	for (i = 0; i < 95; i++)
 	{
 		r = a + b;
 		a = b;
 		b = r;
 		printf("%lu", r);
-		printf(", ");
-		printf("\n");
+		if (i < 95)
+			printf(", ");
+		else
+			printf("\n");
 	}
 	return (0);
 }
