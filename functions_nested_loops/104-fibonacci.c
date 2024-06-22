@@ -10,18 +10,14 @@ int main(void)
 	int i;
 	unsigned long int a = 1, b = 2, r;
 
-	printf("%lu, ", a);
-	printf("%lu, ", b);
+	printf("%lu, %lu ", a, b);
 	for (i = 0; i < 96; i++)
 	{
 		r = a + b;
 		a = b;
 		b = r;
-		printf("%lu", r);
-		if (i < 96)
-			printf(", ");
-		else
-			printf("\n");
+		printf("%lu, ", r);
 	}
+	printf("\n");
 	return (0);
 }
