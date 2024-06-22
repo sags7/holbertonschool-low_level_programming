@@ -20,17 +20,17 @@ void print_times_table(int n)
 				if ((r / 1000) == 0)
 					_putchar(' ');
 				else
-					_putchar('0' + (r / 1000));
+					_putchar('0' + (r / 1000) % 10);
 
 				if ((r / 100) == 0)
 					_putchar(' ');
 				else
-						_putchar('0' + (r / 100));
+						_putchar('0' + (r / 100) % 10);
 
 				if ((r / 10) == 0)
 					_putchar(' ');
 				else
-					_putchar('0' + (r / 10));
+					_putchar('0' + (r / 10) % 10);
 			}
 
 			if ((r / 1) == 0)
