@@ -25,6 +25,6 @@ int main(void)
 			sum += r;
 	}
 
-	printf("%d\n", sum);
+	printf("%ld\n", sum);
 	return (0);
 }
