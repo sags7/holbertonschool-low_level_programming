@@ -30,7 +30,7 @@ void print_times_table(int n)
 				if ((r / 10) == 0)
 					_putchar(' ');
 				else
-						_putchar('0' + (r / 100));
+					_putchar('0' + (r / 10));
 			}
 
 			if ((r / 1) == 0)
