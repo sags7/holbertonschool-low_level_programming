@@ -18,7 +18,7 @@ int main(void)
 		a = b;
 		b = r;
 		printf("%lu", r);
-		if (i < 47)
+		if (i < 96)
 			printf(", ");
 		else
 			printf("\n");
