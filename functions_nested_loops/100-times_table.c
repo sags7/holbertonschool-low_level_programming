@@ -25,12 +25,18 @@ void print_times_table(int n)
 				if ((r / 100) == 0)
 					_putchar(' ');
 				else
-					_putchar('0' + (r / 100));
+					if(r / 100 > 99)
+						_putchar('0' + (r / 100) -100);
+					else
+						_putchar('0' + (r / 100));
 
 				if ((r / 10) == 0)
 					_putchar(' ');
 				else
-					_putchar('0' + (r % 100));
+					if (r / 100 > 9)
+						_putchar('0' + (r / 100) - 10);
+					else
+						_putchar('0' + (r / 100));
 			}
 
 			if ((r / 1) == 0)
