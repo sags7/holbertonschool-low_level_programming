@@ -10,6 +10,9 @@ void print_times_table(int n)
 {
 	long int row, col, r;
 
+	if (n * n > 9999)
+		return;
+
 	for (row = 0; row <= n; row++)
 	{
 		for (col = 0; col <= n; col++)
