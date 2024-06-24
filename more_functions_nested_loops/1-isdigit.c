@@ -5,7 +5,7 @@
  *
  * Return: retruns 1 if c is a  digit  and 0 if it isn't
  */
-int _isupper(int c)
+int _isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
