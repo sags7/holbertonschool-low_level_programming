@@ -13,7 +13,7 @@ void more_numbers(void)
 		{
 			for (units = 0; units < 10; units++)
 			{
-				if(tens > 0 && units > 4)
+				if (tens > 0 && units > 4)
 					break;
 				if (tens != 0)
 					_putchar('0' + tens);
