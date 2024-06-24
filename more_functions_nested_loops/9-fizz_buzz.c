@@ -2,6 +2,7 @@
 /**
  *main- main program entry point
  *
+ * Return: always returns 0
  */
 int main(void)
 {
@@ -19,4 +20,5 @@ int main(void)
 			printf("%d ", i);
 	}
 	putchar('\n');
+	return (0);
 }
