@@ -30,28 +30,19 @@ unsigned int _pow(unsigned int x, unsigned int exp)
 
 void print_number(int n)
 {
-	int i = 1;
-	unsigned int abs, pow;
+	unsigned int abs;
 
 	if (n < 0)
 	{
-		abs = (unsigned int) n * -1;
+		abs = (unsigned int) (n * -1);
 		_putchar(45);
 	}
 	else
 		abs = (unsigned int) n;
 
-	while (1)
-	{
-		if (abs / _pow(10, i) > 0)
-			i++;
-		else
-			break;
-	}
 
-	for (i -= 1; i >= 0; i--)
-	{
-		pow = _pow(10, i);
-		_putchar('0' + (abs / pow) % 10);
-	}
+	if (abs / 10 > 0)
+		print_number(abs / 10);
+
+	_putchar('0' + abs % 10);
 }
