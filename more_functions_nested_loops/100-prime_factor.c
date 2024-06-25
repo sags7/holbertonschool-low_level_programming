@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdio.h>
 /**
  * isPrime- returns 1 if n is prime, 0 if not
  * @n: the number to check if its prime
@@ -11,7 +10,7 @@ int isPrime(int n)
 
 	if (n <= 1)
 		return (0);
-	for (i = 2; i <= n; i++)
+	for (i = 2; i * i <= n; i++)
 		if (n % i == 0 && i != n)
 			return (0);
 	return (1);
@@ -25,17 +24,19 @@ int main(void)
 {
 	long int val = 612852475143, highest_fac = 0, fac;
 
-	for (fac = 2; fac <= val; fac += 2)
+	for (fac = 2; fac <= val ; fac++)
 	{
-		if (fac == 2)
-			fac--;
 		if (isPrime(fac) == 1 && val % fac == 0)
 		{
-			val /= fac;
 			if (fac > highest_fac)
 				highest_fac = fac;
+			while (val % fac == 0)
+                val /= fac;
 		}
 	}
+	if (val > highest_fac)
+        highest_fac = val;
+
 	printf("%ld\n", highest_fac);
 	return (0);
 }
