@@ -37,4 +37,5 @@ int main(void)
 		}
 	}
 	printf("%ld\n", highest_fac);
+	return (0);
 }
