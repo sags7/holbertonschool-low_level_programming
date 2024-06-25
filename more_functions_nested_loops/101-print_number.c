@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _pow- returns x to the power of exp
  * @x: the number to exponentiate
