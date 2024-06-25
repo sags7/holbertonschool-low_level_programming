@@ -5,9 +5,9 @@
  * @exp: the exponent of x
  * Return: returns x to the power of exp
  */
-int _pow(int x, int exp)
+int _pow(unsigned int x, unsigned int exp)
 {
-	int n, res;
+	unsigned int n, res;
 
 	if (exp == 0)
 		return (1);
@@ -30,11 +30,12 @@ int _pow(int x, int exp)
 
 void print_number(int n)
 {
-	int i = 1, abs = n, pow;
+	int i = 1;
+	unsigned int abs = n, pow;
 
-	if (abs < 0)
+	if (n < 0)
 	{
-		abs *= -1;
+		abs = -n;
 		_putchar(45);
 	}
 
