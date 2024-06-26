@@ -23,21 +23,16 @@ int isPrime(int n)
  */
 int main(void)
 {
-	long int val = 612852475143, highest_fac = 0, fac;
+	long int i, n = 612852475143;
 
-	for (fac = 2; fac <= val ; fac++)
+	for(i = 2; i < sqrt(n); i++)
 	{
-		if (isPrime(fac) == 1 && val % fac == 0)
+		if(!(n % i))
 		{
-			if (fac > highest_fac)
-				highest_fac = fac;
-			while (val % fac == 0)
-                val /= fac;
+			n /= i;
+			i = 1;
 		}
 	}
-	if (val > highest_fac)
-        highest_fac = val;
-
-	printf("%ld\n", highest_fac);
+	printf("%ld\n", n);
 	return (0);
 }
