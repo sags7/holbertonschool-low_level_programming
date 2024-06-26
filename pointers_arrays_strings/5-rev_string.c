@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
  * rev_string- reverses the string stored in address *s
  * @s: The location of the first character of the string
