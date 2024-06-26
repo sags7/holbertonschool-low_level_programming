@@ -8,7 +8,8 @@ void print_rev_recursive(char *s, char *start)
 {
 	if (*s != '\0')
 		print_rev_recursive((s + 1), start);
-	_putchar(*s);
+	if (*s != '\0')
+		_putchar(*s);
 
 	if (s == start)
 		_putchar('\n');
