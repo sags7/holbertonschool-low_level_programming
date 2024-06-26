@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * puts2- prints every other letter of a string followed by a new line to stdout
+ * puts2- prints every other letter of a string followed by a new line
  * @str: the starting memory location of the string
  */
 void puts2(char *str)
@@ -9,7 +9,7 @@ void puts2(char *str)
 
 	while (*(str + i) != '\0')
 	{
-		if(i % 2 == 0)
+		if (i % 2 == 0)
 			_putchar(*(str + i));
 		i++;
 	}
