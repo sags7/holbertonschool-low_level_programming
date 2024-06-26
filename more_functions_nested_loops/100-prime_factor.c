@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 /**
  * isPrime- returns 1 if n is prime, 0 if not
  * @n: the number to check if its prime
@@ -10,7 +11,7 @@ int isPrime(int n)
 
 	if (n <= 1)
 		return (0);
-	for (i = 2; i * i <= n; i++)
+	for (i = 2; sqrt(i) <= n; i++)
 		if (n % i == 0 && i != n)
 			return (0);
 	return (1);
