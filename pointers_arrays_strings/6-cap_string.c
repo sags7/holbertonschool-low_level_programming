@@ -11,10 +11,10 @@ char *cap_string(char *c)
 
 	for (i = 0; *(c + i); i++)
 	{
-	    if (*(c + i) >= 'a' && *(c + i) <= 'z')
+		if (*(c + i) >= 'a' && *(c + i) <= 'z')
 			for (b = 0; *(seps + b); b++)
 			{
-				if (*(c + i -1) == *(seps + b))
+				if (*(c + i - 1) == *(seps + b))
 					*(c + i) -= 32;
 			}
 	}
