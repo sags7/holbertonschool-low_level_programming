@@ -17,16 +17,16 @@ int _atoi(char *s)
 		else
 		{
 			while (s[i] >= 48 && s[i] <= 57 && s[i] != '\0')
- 			{
- 				retVal = (retVal * 10) + (s[i] - '0');
- 				i++;
+			{
+				retVal = (retVal * 10) + (s[i] - '0');
+				i++;
 				if (!(s[i] >= 48 && s[i] <= 57 && s[i] != '\0'))
- 				{
- 					if (isPositive == 1)
- 						return (retVal);
- 					return (-retVal);
- 				}
- 			}
+				{
+					if (isPositive == 1)
+						return (retVal);
+					return (-retVal);
+				}
+			}
 		}
 		i++;
 	}
