@@ -1,5 +1,5 @@
 /**
- * _strcat- appends the src string up to the nth byte
+ * _strncat- appends the src string up to the nth byte
  *  to the dest string, overwritting its \0
  * @dest: the string that will get src appended to
  * @src: the string that'll get appended to dest
