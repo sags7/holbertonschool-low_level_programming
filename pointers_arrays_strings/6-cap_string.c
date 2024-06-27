@@ -9,6 +9,9 @@ char *cap_string(char *c)
 	int i, b;
 	char seps[] = " \t\n,;.!?\"(){}";
 
+	if (*c >= 'a' && *c <= 'z')
+		*c -= 32;
+
 	for (i = 0; *(c + i); i++)
 	{
 		if (*(c + i) >= 'a' && *(c + i) <= 'z')
