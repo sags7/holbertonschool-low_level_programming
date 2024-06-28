@@ -35,16 +35,17 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		lenA--;
 		lenB--;
 	}
-    if (carry)
-    {
-        for (p = size_r - 2; p > 0; p--)
-            r[p] = r[p - 1];
-        r[0] = carry + '0';
-        return r;
-    }
-    else
-    {
-        for (p = 0; r[p] == '0'; p++);
-        return r + p;
-    }
+	if (carry)
+	{
+		for (p = size_r - 2; p > 0; p--)
+			r[p] = r[p - 1];
+		r[0] = carry + '0';
+		return (r);
+	}
+	else
+	{
+		for (p = 0; r[p] == '0'; p++)
+			;
+		return (r + p);
+	}
 }
