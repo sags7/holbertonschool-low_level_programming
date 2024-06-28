@@ -7,6 +7,7 @@ char *rot13(char *c)
 {
 	int i, a, rot = 13;
 	char alph[] = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char cod[] = "";
 
 	for (i = 0; *(c + i); i++)
 	{
