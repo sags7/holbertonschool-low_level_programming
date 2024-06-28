@@ -6,26 +6,17 @@
 char *rot13(char *c)
 {
 	int i, a, rot = 13;
-	char alph[] = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
-	char ALPH[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char alph[] = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	for (i = 0; *(c + i); i++)
 	{
-		if (*(c + i) >= 'a' && *(c + i) <= 'z')
+		if ((*(c + i) >= 'a' && *(c + i) <= 'z')
+			|| (*(c + i) >= 'A' && *(c + i) <= 'Z'))
 		{
 			for (a = 0; *(alph + a); a++)
 				if (*(c + i) == *(alph + a))
 				{
 					*(c + i) = *(alph + a + rot);
-					break;
-				}
-		}
-		else if (*(c + i) >= 'A' && *(c + i) <= 'Z')
-		{
-			for (a = 0; *(ALPH + a); a++)
-				if (*(c + i) == *(ALPH + a))
-				{
-					*(c + i) = *(ALPH + a + rot);
 					break;
 				}
 		}
