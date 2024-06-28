@@ -3,18 +3,17 @@
  * print_number- prints an int using _putchar
  * @n: the int to be printed
  */
-void print_number(int n)
+void print_number(int m)
 {
-	int orig, mag = 1, i = 0;
+	unsigned int n, orig, mag = 1, i = 0;
 
-	if (n < 0)
+	if (m < 0)
 	{
-		orig = -n;
-		n = -n;
+		orig = n = (unsigned int) -m;
 		_putchar(45);
 	}
 	else
-		orig = n;
+		orig = n = (unsigned int) m;
 
 	for (i = 0; (n / 10) > 0; i++)
 	{
