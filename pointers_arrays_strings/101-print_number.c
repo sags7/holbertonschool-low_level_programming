@@ -1,7 +1,6 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * print_number- prints an int using _putchar\
+ * print_number- prints an int using _putchar
  * @n: the int to be printed
  */
 void print_number(int n)
@@ -22,7 +21,7 @@ void print_number(int n)
 		mag *= 10;
 	}
 
-	for(; i > 0; i--)
+	for (; i > 0; i--)
 	{
 		_putchar('0' + ((orig / mag) % 10));
 		mag /= 10;
