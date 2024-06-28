@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_number- prints an int using _putchar
- * @n: the int to be printed
+ * @m: the int to be printed
  */
 void print_number(int m)
 {
