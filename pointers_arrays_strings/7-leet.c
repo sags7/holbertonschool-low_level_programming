@@ -1,5 +1,6 @@
 /**
  * leet- encodes a string into 1337
+ * @c: the string to encode
  * Return: returns the encoded string
  */
 char *leet(char *c)
