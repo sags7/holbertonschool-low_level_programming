@@ -1,0 +1,2 @@
+Remove Windows ^M characters
+    (setq clipboard (substring clipboard 0 -1)) ; Remove newline added by Powershel
