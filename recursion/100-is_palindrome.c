@@ -1,3 +1,4 @@
+#include <string.h>
 /**
  * helper_palindrome- helper function for is_palindrome
  * @s: the string to check if its a palindrome
@@ -20,11 +21,9 @@ int helper_palindrome(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-	int e = 0;
+	int e = strlen(s);
 
 	if (*s == '\0')
 		return (1);
-	while (*(s + e))
-		e++;
 	return (helper_palindrome(s, 0, --e));
 }
