@@ -12,17 +12,17 @@ char *_strstr(char *haystack, char *needle)
 
 	for (i = 0; *(haystack + i); i++)
 	{
-		if (*needle == *(haystack + i))
+		if (*(haystack + i) == *needle)
 		{
 			retVal = haystack + i;
 			for (j = 0; *(needle + j); j++)
 			{
-				if (*(haystack + i) != *(needle + j))
-					return ('\0');
-				i++;
+				if (*(haystack + i + j) != *(needle + j))
+					break;
 			}
-			return (retVal);
+			if (*(needle + j) == '\0')
+				return (retVal);
 		}
 	}
-	return ('\0');
+	return (0);
 }
