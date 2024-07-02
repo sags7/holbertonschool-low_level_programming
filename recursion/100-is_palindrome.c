@@ -1,4 +1,14 @@
-#include <string.h>
+/**
+ * _strlen- returns the length of a string
+ * @s: the string
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + _strlen(s + 1));
+}
 /**
  * helper_palindrome- helper function for is_palindrome
  * @s: the string to check if its a palindrome
@@ -21,7 +31,7 @@ int helper_palindrome(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-	int e = strlen(s);
+	int e = _strlen(s);
 
 	if (*s == '\0')
 		return (1);
