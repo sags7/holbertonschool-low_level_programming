@@ -34,7 +34,8 @@ int main(void)
 		else
 			break;
 	}
-	if (currentValue < targetValue) {
+	if (currentValue < targetValue)
+	{
 		putchar(targetValue - currentValue);
 		currentValue = targetValue;
 	}
