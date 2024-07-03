@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * minCoins_rec- returns the minimum number of coins required to change
+ * the input cents in terms of the provided organized list of coins
+ * @cents: amount of cents
+ * @coinIndex: the current coin
+ * @availableCoins: the array of available coins
+ * Return: the amount of coins needed in that denomination
+ */
+int minCoins_rec(int cents, int coinIndex, int *availableCoins)
+{
+	int retVal = 0;
+
+	if (cents <= 0)
+		return (0);
+
+	while (cents >= availableCoins[coinIndex])
+	{
+		retVal++;
+		cents -= availableCoins[coinIndex];
+	}
+	return (retVal + minCoins_rec(cents, ++coinIndex, availableCoins));
+}
+/**
  * main- prints the minimum number of coins required to change the input cents.
  * available coins are 25, 10, 5, 2 and 1 cent coins
  * @argsc: amount of arguments
@@ -9,38 +31,21 @@
  */
 int main(int argsc, char **argsv)
 {
-	int minCoins = 0, cents = atoi(argsv[1]);
+	int availableCoins[] = {25, 10, 5, 2, 1};
+	int cents = 0;
 
+	if (argsv[1])
+		cents = atoi(argsv[1]);
+	if (cents < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
 	if (argsc != 2)
 	{
 		printf("%s\n", "Error");
 		return (1);
 	}
-	while (cents >= 25)
-	{
-		minCoins++;
-		cents -= 25;
-	}
-	while (cents >= 10)
-	{
-		minCoins++;
-		cents -= 10;
-	}
-	while (cents >= 5)
-	{
-		minCoins++;
-		cents -= 5;
-	}
-	while (cents >= 2)
-	{
-		minCoins++;
-		cents -= 2;
-	}
-	while (cents >= 1)
-	{
-		minCoins++;
-		cents -= 1;
-	}
-	printf("%d\n", minCoins);
+	printf("%d\n", minCoins_rec(cents, 0, availableCoins));
 	return (0);
 }
