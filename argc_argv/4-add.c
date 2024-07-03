@@ -15,7 +15,7 @@ int main(int argsc, char **argsv)
 	{
 		for (j = 0; argsv[i][j]; j++)
 		{
-			if (argsv[i][j] <= '0' && argsv[i][j] >= '9')
+			if (argsv[i][j] < '0' || argsv[i][j] > '9')
 			{
 				printf("%s\n", "Error");
 				return (1);
