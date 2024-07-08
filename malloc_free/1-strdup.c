@@ -1,5 +1,15 @@
 #include <stdlib.h>
-#include <string.h>
+/**
+ * _strlen_recursion- returns the length of a string
+ * @s: the string to measure
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	if (!*s)
+		return (0);
+	return (_strlen(s + 1) + 1);
+}
 /**
  * _strdup- duplicates a string and returns its mem location
  * @str: the string to be duplicated
@@ -8,7 +18,7 @@
 char *_strdup(char *str)
 {
 	int i = 0;
-	char *newStr = malloc((strlen(str) * sizeof(char)) + 1);
+	char *newStr = malloc((_strlen(str) * sizeof(char)) + 1);
 
 	if (str == NULL || newStr == NULL)
 		return (NULL);
