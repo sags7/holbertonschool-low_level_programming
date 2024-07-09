@@ -6,7 +6,7 @@
  */
 int _strlen(char *s)
 {
-	if (!*s)
+	if (!s || !*s)
 		return (0);
 	return (_strlen(s + 1) + 1);
 }
@@ -30,6 +30,6 @@ char *str_concat(char *s1, char *s2)
 	if (s2)
 		for (i = 0; *(s2 + i); i++)
 			*(retVal + a + i) = *(s2 + i);
-	*(retVal + a + b + 1) = '\0';
+	*(retVal + a + b) = '\0';
 	return (retVal);
 }
