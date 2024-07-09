@@ -20,8 +20,10 @@ char *str_concat(char *s1, char *s2)
 {
 	int i = 0;
 	unsigned int a = _strlen(s1), b = _strlen(s2);
+	char *retVal = malloc((a + b + 1) * sizeof(char));
 
-	char *retVal = calloc(a + b + 1, sizeof(char));
+	if (!retVal)
+		return (NULL);
 
 	for (i = 0; *(s1 + i); i++)
 		*(retVal + i) = *(s1 + i);
