@@ -24,11 +24,12 @@ char *str_concat(char *s1, char *s2)
 
 	if (!retVal)
 		return (NULL);
-
-	for (i = 0; *(s1 + i); i++)
-		*(retVal + i) = *(s1 + i);
-	for (i = 0; *(s2 + i); i++)
-		*(retVal + a + i) = *(s2 + i);
+	if (s1)
+		for (i = 0; *(s1 + i); i++)
+			*(retVal + i) = *(s1 + i);
+	if (s2)
+		for (i = 0; *(s2 + i); i++)
+			*(retVal + a + i) = *(s2 + i);
 	*(retVal + a + b + 1) = '\0';
 	return (retVal);
 }
