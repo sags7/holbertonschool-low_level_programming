@@ -15,7 +15,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	retVal = malloc(nmemb * size);
 	if (!retVal)
 		return (NULL);
-	for (i = 0; i < nmemb; i++)
+	for (i = 0; i < nmemb * size; i++)
 		((char *) retVal)[i] = 0;
 	return (retVal);
 }
