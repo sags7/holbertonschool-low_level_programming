@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "main.h"
 
+void _putchar(char c);
 /**
  * print_number- prints an int using _putchar
  * @m: the int to be printed
