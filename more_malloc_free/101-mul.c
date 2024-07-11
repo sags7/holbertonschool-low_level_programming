@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+#include <unistd.h>
+
+/**
+ * _putchar-prints a char to stdout
+ * @c: the char to print
+ */
+void _putchar(char c)
+{
+	write(1, &c, 1);
+}
 /**
  * print_number- prints an int using _putchar
  * @m: the int to be printed
