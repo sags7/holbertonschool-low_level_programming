@@ -65,7 +65,7 @@ int _pow(int x, int y)
  */
 int strtoint(char *str)
 {
-	int i = 0, rv = 0, len = _strlen(str);
+	long int i = 0, rv = 0, len = _strlen(str);
 
 	for (i = 0; str[i]; i++)
 	{
@@ -87,7 +87,7 @@ int strtoint(char *str)
  */
 int main(int argsc, char **argsv)
 {
-	int num1 = 0, num2 = 0;
+	long int num1 = 0, num2 = 0;
 
 	if (argsc != 3)
 	{
