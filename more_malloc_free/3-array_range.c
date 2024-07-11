@@ -16,8 +16,8 @@ int *array_range(int min, int max)
 	if (!rv)
 		return (NULL);
 
-	for (i = min; i <= max; i++)
-		rv[i] = i;
+	for (i = 0; i <= max - min + 1; i++)
+		rv[i] = min + i;
 
 	return (rv);
 }
