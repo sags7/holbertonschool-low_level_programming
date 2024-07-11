@@ -63,9 +63,9 @@ int _pow(int x, int y)
  * @str: the string to take the numbers from
  * Return: int or exits with code 98 in case of bad input
  */
-int strtoint(char *str)
+unsigned long int strtoint(char *str)
 {
-	long int i = 0, rv = 0, len = _strlen(str);
+	unsigned long int i = 0, rv = 0, len = _strlen(str);
 
 	for (i = 0; str[i]; i++)
 	{
@@ -87,7 +87,7 @@ int strtoint(char *str)
  */
 int main(int argsc, char **argsv)
 {
-	long int num1 = 0, num2 = 0;
+	unsigned long int num1 = 0, num2 = 0;
 
 	if (argsc != 3)
 	{
