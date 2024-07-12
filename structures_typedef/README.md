@@ -1,0 +1,1 @@
+Holberton school README for the structures and typedef in C section of the course
