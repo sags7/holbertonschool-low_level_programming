@@ -141,20 +141,20 @@ int main(int argsc, char **argsv)
 		exit(98);
 	}
 
-	for (i2 = len2 - 1; i2 >= 0; i2--) /*multiplication of the two numbers */
+	for (i2 = len2 - 1; i2 >= 0; i2--) /* multiplication of the two numbers */
 		for (i1 = len1 - 1; i1 >= 0; i1--)
 		{
 			int mult = (num1[i1] - '0') * (num2[i2] - '0');
 			int sum = mult + result[i1 + i2 + 1];
 
-			result[i1 + i2 + 1] += sum % 10;
+			result[i1 + i2 + 1] = sum % 10;
 			result[i1 + i2] += sum / 10;
 		}
 
-	while (start < gridW && result[start] == 0) /*considers 0s at the start*/
+	while (start < gridW && result[start] == 0) /* skip leading zeros */
 		start++;
 
-	if (start == gridW)
+	if (start == gridW) /* if the result is zero */
 		_putchar('0');
 	else
 		for (i1 = start; i1 < gridW; i1++)
