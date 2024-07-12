@@ -117,12 +117,12 @@ int **alloc_grid(int width, int height)
  */
 int main(int argsc, char **argsv)
 {
-	int len1 = 0, len2 = 0, i1 = 0, i2 = 0;
-	int gridW = 0, gridL = 0, pr = 0;
+	int len1 = 0, len2 = 0, i1 = 0, i2 = 0, start = 0;
+	int gridW = 0;
 	char *num1 = NULL, *num2 = NULL;
-	int **mults = NULL;
+	int *result = NULL;
 
-	if (argsc != 3)
+	if (argsc != 3) /* if incorrect amount of arguments, exit */
 	{
 		printf("Error\n");
 		exit(98);
@@ -133,38 +133,35 @@ int main(int argsc, char **argsv)
 	len1 = _strlen(num1);
 	len2 = _strlen(num2);
 	gridW = len1 + len2;
-	gridL = len1 + len2;
-	mults = alloc_grid(gridW, gridL);
+	result = calloc(gridW, sizeof(int));
 
-	if (mults == NULL)
+	if (result == NULL) /* if calloc fails, exit */
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	for (i1 = 0; i1 < gridL; i1++)
-		for (i2 = 0; i2 < gridW; i2++)
-			mults[i1][i2] = 0;
-
-	for (i2 = 0; i2 < len2; i2++)
-		for (i1 = 0; i1 < len1; i1++)
+	for (i2 = len2 - 1; i2 >= 0; i2--) /*multiplication of the two numbers */
+		for (i1 = len1 - 1; i1 >= 0; i1--)
 		{
 			int mult = (num1[i1] - '0') * (num2[i2] - '0');
-			int carry = mult / 10;
-			int res = mult % 10;
+			int sum = mult + result[i1 + i2 + 1];
 
-			mults[len1 + len2 - 1 - i2 - i1][0] += res;
-			mults[len1 + len2 - 2 - i2 - i1][0] += carry;
+			result[i1 + i2 + 1] += sum % 10;
+			result[i1 + i2] += sum / 10;
 		}
 
-	for (i1 = 0; i1 < gridW; i1++)
-		pr += mults[gridL - 1][i1];
-	_putchar('0' + pr);
+	while (start < gridW && result[start] == 0) /*considers 0s at the start*/
+		start++;
+
+	if (start == gridW)
+		_putchar('0');
+	else
+		for (i1 = start; i1 < gridW; i1++)
+			_putchar('0' + result[i1]);
 	_putchar('\n');
 
-	for (i1 = 0; i1 < gridL; i1++)
-		free(mults[i1]);
-	free(mults);
+	free(result);
 
 	return (0);
 }
