@@ -63,7 +63,7 @@ int _pow(int x, int y)
  * @str: the string to take the numbers from
  * Return: int or exits with code 98 in case of bad input
  */
-unsigned long int strtoint(char *str)
+int strtoint(char *str)
 {
 	unsigned long int i = 0, rv = 0, len = _strlen(str);
 
@@ -80,6 +80,36 @@ unsigned long int strtoint(char *str)
 	return (rv);
 }
 /**
+ * alloc_grid- creates a 2 dimensional array of ints and returns a pointer
+ * @width: the width of the array
+ * @height: the height of the array
+ * Return: the memory position of the array
+ */
+int **alloc_grid(int width, int height)
+{
+	int i = 0;
+	int **retVal = malloc(height * sizeof(int *));
+
+	if (width <= 0 || height <= 0)
+		return (NULL);
+
+	if (!retVal)
+		return (NULL);
+
+	for (i = 0; i < height; i++)
+	{
+		*(retVal + i) = malloc(width * sizeof(int));
+		if (!*(retVal + i))
+		{
+			for (; i >= 0; i--)
+				free(*(retVal + i));
+			free(retVal);
+			return (NULL);
+		}
+	}
+	return (retVal);
+}
+/**
  * main- multiplies two numbers passed as arguments and prints the result
  * @argsc: the amount of arguments
  * @argsv: arguments vector
@@ -87,18 +117,54 @@ unsigned long int strtoint(char *str)
  */
 int main(int argsc, char **argsv)
 {
-	unsigned long int num1 = 0, num2 = 0;
+	int len1 = 0, len2 = 0, i1 = 0, i2 = 0;
+	int gridW = 0, gridL = 0, pr = 0;
+	char *num1 = NULL, *num2 = NULL;
+	int **mults = NULL;
 
 	if (argsc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	num1 = strtoint(argsv[1]);
-	num2 = strtoint(argsv[2]);
 
-	print_number(num1 * num2);
+	num1 = argsv[1];
+	num2 = argsv[2];
+	len1 = _strlen(num1);
+	len2 = _strlen(num2);
+	gridW = len1 + len2;
+	gridL = len1 + len2;
+	mults = alloc_grid(gridW, gridL);
+
+	if (mults == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	for (i1 = 0; i1 < gridL; i1++)
+		for (i2 = 0; i2 < gridW; i2++)
+			mults[i1][i2] = 0;
+
+	for (i2 = 0; i2 < len2; i2++)
+		for (i1 = 0; i1 < len1; i1++)
+		{
+			int mult = (num1[i1] - '0') * (num2[i2] - '0');
+			int carry = mult / 10;
+			int res = mult % 10;
+
+			mults[len1 + len2 - 1 - i2 - i1][0] += res;
+			mults[len1 + len2 - 2 - i2 - i1][0] += carry;
+		}
+
+	for (i1 = 0; i1 < gridW; i1++)
+		pr += mults[gridL - 1][i1];
+	_putchar('0' + pr);
 	_putchar('\n');
+
+	for (i1 = 0; i1 < gridL; i1++)
+		free(mults[i1]);
+	free(mults);
 
 	return (0);
 }
