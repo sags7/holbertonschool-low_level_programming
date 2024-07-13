@@ -36,7 +36,7 @@ int _strlen_recursion(char *s)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-    dog_t *retVal = NULL;
+	dog_t *retVal = NULL;
 
 	if (!name || !age || !owner)
 		return (NULL);
