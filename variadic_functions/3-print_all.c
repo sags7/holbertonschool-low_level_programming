@@ -24,7 +24,7 @@ void printInt(va_list args)
  */
 void printFloat(va_list args)
 {
-	printf("%.2f", va_arg(args, double));
+	printf("%.5f", va_arg(args, double));
 }
 /**
  * printString - helper func that prints an int to stdout
