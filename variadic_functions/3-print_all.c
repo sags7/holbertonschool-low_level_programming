@@ -39,7 +39,7 @@ void printString(va_list args)
 		printf("%s", ptr);
 		return;
 	}
-	printf("(nil");
+	printf("(nil)");
 }
 /**
  * print_all - a function that prints anything passed to it
