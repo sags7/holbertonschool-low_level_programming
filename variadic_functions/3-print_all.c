@@ -35,9 +35,11 @@ void printString(va_list args)
 	char *ptr = va_arg(args, char *);
 
 	if (ptr)
+	{
 		printf("%s", ptr);
-	else
-		printf("(nil");
+		return;
+	}
+	printf("(nil");
 }
 /**
  * print_all - a function that prints anything passed to it
