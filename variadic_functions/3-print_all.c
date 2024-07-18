@@ -19,7 +19,7 @@ void printInt(va_list args)
 	printf("%d", va_arg(args, int));
 }
 /**
- * printFloat - helper func that prints an int to stdout
+ * printFloat - helper func that prints a float to stdout
  * @args: the va_list to get the args from
  */
 void printFloat(va_list args)
@@ -32,7 +32,12 @@ void printFloat(va_list args)
  */
 void printString(va_list args)
 {
-	printf("%s", va_arg(args, char *));
+	char *ptr = va_arg(args, char *);
+
+	if (ptr)
+		printf("%s", ptr);
+	else
+		printf("(nil");
 }
 /**
  * print_all - a function that prints anything passed to it
@@ -52,7 +57,6 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(args, format);
-
 	while (format && *(format + i))
 	{
 		j = 0;
