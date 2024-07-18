@@ -48,6 +48,8 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	int i = 0, j = 0;
+	char *separator = "";
+
 	argtype argumentTypes[] = {
 			{'c', printChar},
 			{'i', printInt},
@@ -64,9 +66,9 @@ void print_all(const char * const format, ...)
 		{
 			if (argumentTypes[j].arg == *(format + i))
 			{
+				printf("%s", separator);
 				argumentTypes[j].printFunc(args);
-				if (*(format + i + 1))
-					printf(", ");
+				separator = ", ";
 				break;
 			}
 			j++;
