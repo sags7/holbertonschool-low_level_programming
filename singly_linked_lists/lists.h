@@ -17,7 +17,6 @@ typedef struct list_single
 	struct list_single *next;
 } list_t;
 
-void _putchar (char);
 size_t print_list(const list_t *h);
 
 #endif
