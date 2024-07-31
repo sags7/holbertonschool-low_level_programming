@@ -10,14 +10,15 @@
  *
  * Description: singly-linked list of strings and their lengths
  */
-typedef struct list_single
+typedef struct list_t
 {
 	char *str;
 	int len;
-	struct list_single *next;
+	struct list_t *next;
 } list_t;
 
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
+list_t *add_node(list_t **head, const char *str);
 
 #endif
