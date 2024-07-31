@@ -26,7 +26,7 @@ list_t *add_node(list_t **head, const char *str)
 	while (str[len++])
 		;
 
-	newNode->len = len;
+	newNode->len = len - 1;
 	newNode->next = *head;
 	*head = newNode;
 
