@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  * binary_to_uint - turns a string of 1s and 0s into a uint
  * @b: the string of ones and zeroes
