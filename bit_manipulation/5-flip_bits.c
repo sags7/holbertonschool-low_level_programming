@@ -8,11 +8,11 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int i = sizeof(unsigned long int) * 8 - 1;
+	long int i = sizeof(unsigned long int) * 8 - 1;
 	unsigned long int mask = 1;
 	unsigned int retVal = 0;
 
-	while (i > 0)
+	while (i >= 0)
 	{
 		if ((mask & n) ^ (mask & m))
 			retVal++;
