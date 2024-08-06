@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fdFrom = open(argv[1], O_RDONLY);
-	if (fdFrom < 0)
+	if (fdFrom <= 0)
 		print_error_and_exit("Error: Can't read from file", argv[1], 98);
 	fdTo = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fdTo < 0)
