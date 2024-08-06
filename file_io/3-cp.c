@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 	fdTo = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fdTo < 0)
 			print_error_and_exit("Error: Can't write to", argv[1], 99);
+
 	fdFrom = open(argv[1], O_RDONLY);
 	if (fdFrom < 0)
 	{
