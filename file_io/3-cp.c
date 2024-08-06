@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 			print_error_and_exit("Error: Can't write to", argv[2], 99);
 		}
 	}
-	if (readBytes < 0)
+	if (readBytes <= 0)
 	{
 		close(fdFrom);
 		close(fdTo);
